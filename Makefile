@@ -8,3 +8,9 @@ mathExp.o: mathExp.h
 
 opTree.o: opTree.h
 	gcc -c opTree.c
+
+run:
+	./shmath
+
+clear:
+	rm *.o
