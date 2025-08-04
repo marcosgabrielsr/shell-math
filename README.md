@@ -5,7 +5,7 @@ This is a simple terminal-based math solver designed to evaluate basic algebraic
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Funcionalidades](#funcionalidades)
-- [Tecnlogias](#tecnologias)
+- [Tecnologias](#tecnologias)
 - [Licença](#licença)
 
 Work in progress! New features and improvements are on the way...
