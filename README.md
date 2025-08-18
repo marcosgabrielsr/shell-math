@@ -1,5 +1,5 @@
 # shell-math
-This is a simple terminal-based math solver designed to evaluate basic algebraic expressions in C. It currently supports reading expressions, removing whitespace, and recognizing addition and subtraction operations. Support for multiplication and division is planned for future versions.
+This is a simple terminal mathematical expression solver using C++. The goal of this project is to learn more about creating terminal applications and to practice and apply concepts seen in the Compilers I course at the University. Its current version allows for lexical analysis of the expression, verifying that the symbols in it follow a defined pattern. In future updates, the syntactic analyzer will be implemented.
 
 # Conteúdo
 - [Instalação](#instalação)
