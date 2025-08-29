@@ -10,4 +10,10 @@ class Lexer {
     public:
         // Builder
         Lexer(string);
+
+        // Method that returns the next token identified
+        Token* nextToken();
+
+        // Lexical Error identified
+        void lexicalError();
 };
