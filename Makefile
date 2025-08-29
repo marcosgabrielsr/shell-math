@@ -1,6 +1,6 @@
 # Main
 all: lexer.o
-	g++ lexer.o shmath.cpp -o shmath -Wall
+	g++ lexer.o main.cpp -o shmath -Wall
 	rm *.o
 
 lexer.o: token.h
