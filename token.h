@@ -21,6 +21,7 @@ enum Names {
     PAR_LEFT, //12
     BRACK_RIGHT, //13
     BRACK_LEFT, //14
+    END_OF_FILE //15
 };
 
 class Token {
