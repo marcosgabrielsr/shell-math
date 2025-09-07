@@ -7,10 +7,11 @@ This is a simple terminal mathematical expression solver using C++. The goal of 
 - [Use](#use)
 
 - [Features](#features)
-    Syntatic Analysis: This project uses a syntactic analyzer to confirm if the input follows the math definition.
+    Lexical Analysis: This project uses a syntactic analyzer to confirm if the input follows the math definition.
 
 - [Tecnologies](#tecnologies)
 
-- [Licence](#licence) MIT License
+- [Licence](#licence)
+    MIT License
 
 Work in progress! New features and improvements are on the way...
