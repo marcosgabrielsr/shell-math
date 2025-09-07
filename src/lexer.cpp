@@ -43,6 +43,8 @@ Token* Lexer::nextToken() {
                     state = 19;
                 } else if(isspace(input[pos])) {
                   state = 21;
+                } else {
+                    lexicalError();
                 }
 
                 pos++;
@@ -138,35 +140,35 @@ Token* Lexer::nextToken() {
                 return tok;
             
             case 11:
-                tok = new Token(PLUS);
+                tok = new Token(ARITHMETIC_OPERATORS, PLUS);
                 return tok;
             
             case 12:
-                tok = new Token(MINUS);
+                tok = new Token(ARITHMETIC_OPERATORS, MINUS);
                 return tok;
 
             case 13:
-                tok = new Token(MULT);
+                tok = new Token(ARITHMETIC_OPERATORS, MULT);
                 return tok;
             
             case 14:
-                tok = new Token(DIV);
+                tok = new Token(ARITHMETIC_OPERATORS, DIV);
                 return tok;
             
             case 16:
-                tok = new Token(L_PARENTHESE);
+                tok = new Token(SEPARATORS, L_PARENTHESE);
                 return tok;
 
             case 17:
-                tok = new Token(R_PARENTHESE);
+                tok = new Token(SEPARATORS, R_PARENTHESE);
                 return tok;
             
             case 18:
-                tok = new Token(L_BRACKET);
+                tok = new Token(SEPARATORS, L_BRACKET);
                 return tok;
 
             case 19:
-                tok = new Token(R_BRACKET);
+                tok = new Token(SEPARATORS, R_BRACKET);
                 return tok;
             
             case 21:

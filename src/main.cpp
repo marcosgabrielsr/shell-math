@@ -29,21 +29,23 @@ int main() {
 }
 
 string* allocVect() {
-    string* vect = new string[14];
+    string* vect = new string[16];
     vect[0] = "UNDEF";
     vect[1] = "NUMBER";
     vect[2] = "DOUBLE_LITERAL";
     vect[3] = "FLOAT_LITERAL";
     vect[4] = "INTEGER_LITERAL";
-    vect[5] = "PLUS";
-    vect[6] = "MINUS";
-    vect[7] = "MULT";
-    vect[8] = "DIV";
-    vect[9] = "L_PARENTHESE";
-    vect[10] = "R_PARENTHESE";
-    vect[11] = "L_BRACKET";
-    vect[12] = "R_BRACKET";
-    vect[13] = "END_OF_FILE";
+    vect[5] = "ARITHMETIC_OPERATORS";
+    vect[6] = "PLUS";
+    vect[7] = "MINUS";
+    vect[8] = "MULT";
+    vect[9] = "DIV";
+    vect[10]= "SEPARATORS";
+    vect[11] = "L_PARENTHESE";
+    vect[12] = "R_PARENTHESE";
+    vect[13] = "L_BRACKET";
+    vect[14] = "R_BRACKET";
+    vect[15] = "END_OF_FILE";
 
     return vect;
 }

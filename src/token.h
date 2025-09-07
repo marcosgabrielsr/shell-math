@@ -7,20 +7,22 @@
 using namespace std;
 
 enum Names {
-    UNDEF,            //0
-    NUMBER,           //1
-    DOUBLE_LITERAL,   //2
-    FLOAT_LITERAL,    //3
-    INTEGER_LITERAL,  //4
-    PLUS,             //5
-    MINUS,            //6
-    MULT,             //7
-    DIV,              //8
-    L_PARENTHESE,     //9
-    R_PARENTHESE,     //10
-    L_BRACKET,        //11
-    R_BRACKET,        //12
-    END_OF_FILE       //13
+    UNDEF,                      //0
+    NUMBER,                     //1
+    DOUBLE_LITERAL,             //2
+    FLOAT_LITERAL,              //3
+    INTEGER_LITERAL,            //4
+    ARITHMETIC_OPERATORS,       //5
+    PLUS,                       //6
+    MINUS,                      //7
+    MULT,                       //8
+    DIV,                        //9
+    SEPARATORS,                 //10     
+    L_PARENTHESE,               //11
+    R_PARENTHESE,               //12
+    L_BRACKET,                  //13
+    R_BRACKET,                  //14
+    END_OF_FILE                 //15
 };
 
 class Token {
