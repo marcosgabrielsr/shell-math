@@ -1,0 +1,8 @@
+# Ignorar diretório de build
+/build/
+
+# Arquivos temporários de compilação
+*.o
+*.out
+*.exe
+*.elf
