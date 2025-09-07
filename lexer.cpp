@@ -33,6 +33,16 @@ Token* Lexer::nextToken() {
                     state = 13;
                 } else if(input[pos] == '/') {
                     state = 14;
+                } else if(input[pos] == '(') {
+                    state = 16;
+                } else if(input[pos] == ')') {
+                    state = 17;
+                } else if(input[pos] == '[') {
+                    state = 18;
+                } else if(input[pos] == ']') {
+                    state = 19;
+                } else if(isspace(input[pos])) {
+                  state = 21;
                 }
 
                 pos++;
@@ -128,23 +138,52 @@ Token* Lexer::nextToken() {
                 return tok;
             
             case 11:
-                tok = new Token(OPSIGNAL, SM);
+                tok = new Token(PLUS);
                 return tok;
             
             case 12:
-                tok = new Token(OPSIGNAL, SB);
+                tok = new Token(MINUS);
                 return tok;
 
             case 13:
-                tok = new Token(OPSIGNAL, MU);
+                tok = new Token(MULT);
                 return tok;
             
             case 14:
-                tok = new Token(OPSIGNAL, DI);
+                tok = new Token(DIV);
+                return tok;
+            
+            case 16:
+                tok = new Token(L_PARENTHESE);
                 return tok;
 
-        default:
-            break;
+            case 17:
+                tok = new Token(R_PARENTHESE);
+                return tok;
+            
+            case 18:
+                tok = new Token(L_BRACKET);
+                return tok;
+
+            case 19:
+                tok = new Token(R_BRACKET);
+                return tok;
+            
+            case 21:
+                if(!isspace(input[pos])) {
+                  state = 22;
+                }
+
+                pos++;
+                break;
+            
+            case 22:
+                pos--;
+                state = 0;
+                break;
+
+            default:
+              break;
         }
     }
 }
