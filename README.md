@@ -3,9 +3,14 @@ This is a simple terminal mathematical expression solver using C++. The goal of 
 
 # Content
 - [Instalation](#instalation)
+
 - [Use](#use)
+
 - [Features](#features)
+    Syntatic Analysis: This project uses a syntactic analyzer to confirm if the input follows the math definition.
+
 - [Tecnologies](#tecnologies)
-- [Licence](#licence)
+
+- [Licence](#licence) MIT License
 
 Work in progress! New features and improvements are on the way...
