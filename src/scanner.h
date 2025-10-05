@@ -1,7 +1,7 @@
 // Importing libraries
 #include "token.h"
 
-class Lexer {
+class Scanner {
     private:
         // Declaring atributes
         string input;                       // Store the input text
@@ -9,7 +9,7 @@ class Lexer {
     
     public:
         // Builder
-        Lexer(string);
+        Scanner(string);
 
         // Method that returns the next token identified
         Token* nextToken();

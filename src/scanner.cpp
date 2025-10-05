@@ -1,8 +1,8 @@
 // Including librarires
-#include "lexer.h"
+#include "scanner.h"
 
 // Builder
-Lexer::Lexer(string input) {
+Scanner::Scanner(string input) {
     this->input = input;
     cout << "The input text is: " << input << "\n" << "Tamanho: " << input.length() << "\n";
     
@@ -10,7 +10,7 @@ Lexer::Lexer(string input) {
 }
 
 // Method that returns the next token identified
-Token* Lexer::nextToken() {
+Token* Scanner::nextToken() {
     Token* tok;
     int state = 0;  // initial state
     string lexeme;
@@ -191,7 +191,7 @@ Token* Lexer::nextToken() {
 }
 
 // Lexical Error identified
-void Lexer::lexicalError() {
+void Scanner::lexicalError() {
     cout << "Token bad informed" << "\n";
     exit(EXIT_FAILURE);
 }
