@@ -26,9 +26,9 @@ enum Names {
 
 class Token {
     public:
-        int name;
-        int attribute;
-        string lexeme;
+        int name;                       // Name of the lexeme
+        int attribute;                  // Attribute to specify the lexeme
+        string lexeme;                  // Lexeme identified
 
         // Constructor methods
         Token(int name) {

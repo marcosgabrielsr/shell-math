@@ -96,7 +96,7 @@ Token* Scanner::nextToken() {
             case 5:
                 pos--;
                 lexeme.pop_back();
-                tok = new Token(NUMBER, FLOAT_LITERAL);
+                tok = new Token(NUMBER, DOUBLE_LITERAL);
                 tok->lexeme = lexeme;
                 return tok;
 
@@ -140,35 +140,35 @@ Token* Scanner::nextToken() {
                 return tok;
             
             case 11:
-                tok = new Token(ARITHMETIC_OPERATORS, PLUS);
+                tok = new Token(ARITHMETIC_OPERATOR, PLUS);
                 return tok;
             
             case 12:
-                tok = new Token(ARITHMETIC_OPERATORS, MINUS);
+                tok = new Token(ARITHMETIC_OPERATOR, MINUS);
                 return tok;
 
             case 13:
-                tok = new Token(ARITHMETIC_OPERATORS, MULT);
+                tok = new Token(ARITHMETIC_OPERATOR, MULT);
                 return tok;
             
             case 14:
-                tok = new Token(ARITHMETIC_OPERATORS, DIV);
+                tok = new Token(ARITHMETIC_OPERATOR, DIV);
                 return tok;
             
             case 16:
-                tok = new Token(SEPARATORS, L_PARENTHESE);
+                tok = new Token(SEPARATOR, L_PARENTHESE);
                 return tok;
 
             case 17:
-                tok = new Token(SEPARATORS, R_PARENTHESE);
+                tok = new Token(SEPARATOR, R_PARENTHESE);
                 return tok;
             
             case 18:
-                tok = new Token(SEPARATORS, L_BRACKET);
+                tok = new Token(SEPARATOR, L_BRACKET);
                 return tok;
 
             case 19:
-                tok = new Token(SEPARATORS, R_BRACKET);
+                tok = new Token(SEPARATOR, R_BRACKET);
                 return tok;
             
             case 21:
