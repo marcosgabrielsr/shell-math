@@ -1,6 +1,6 @@
 // Including libraries
 #include <iostream>
-#include "lexer.h"
+#include "scanner.h"
 
 using namespace std;
 
@@ -15,11 +15,11 @@ int main() {
     string input;               // variable to store the math expression
     getline(cin, input);
 
-    Lexer* lexer = new Lexer(input);
+    Scanner* scan = new Scanner(input);
 
     Token* t;
     do {
-        t = lexer->nextToken();
+        t = scan->nextToken();
         printTk(vect, t);
     } while(t->name != END_OF_FILE);
 

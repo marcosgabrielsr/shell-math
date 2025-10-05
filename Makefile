@@ -4,18 +4,18 @@ DIR_BUILD = build
 
 # Files
 MAIN = $(DIR_SRC)/main.cpp
-LEXER = $(DIR_SRC)/lexer.cpp
+SCANNER = $(DIR_SRC)/scanner.cpp
 TOKEN_H = $(DIR_SRC)/token.h
-LEXER_H = $(DIR_SRC)/lexer.h
+SCANNER_H = $(DIR_SRC)/scanner.h
 EXECUTABLE = $(DIR_BUILD)/shmath
 
 # Main
-all: lexer.o
-	g++ lexer.o $(MAIN) -o $(EXECUTABLE) -Wall
+all: scanner.o
+	g++ scanner.o $(MAIN) -o $(EXECUTABLE) -Wall
 	mv *.o $(DIR_BUILD)
 
-lexer.o: $(TOKEN_H) $(LEXER_H)
-	g++ -c $(LEXER)
+scanner.o: $(TOKEN_H) $(SCANNER_H)
+	g++ -c $(SCANNER)
 
 run:
 	./$(EXECUTABLE)
