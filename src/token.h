@@ -11,7 +11,7 @@ enum Names {
     NUMBER,                     //1
     DOUBLE_LITERAL,             //2
     INTEGER_LITERAL,            //3
-    ARITHMETIC_OPERATORS,       //4
+    ARITHMETIC_OPERATOR,        //4
     PLUS,                       //5
     MINUS,                      //6
     MULT,                       //7
