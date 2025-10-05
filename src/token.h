@@ -10,19 +10,18 @@ enum Names {
     UNDEF,                      //0
     NUMBER,                     //1
     DOUBLE_LITERAL,             //2
-    FLOAT_LITERAL,              //3
-    INTEGER_LITERAL,            //4
-    ARITHMETIC_OPERATORS,       //5
-    PLUS,                       //6
-    MINUS,                      //7
-    MULT,                       //8
-    DIV,                        //9
-    SEPARATORS,                 //10     
-    L_PARENTHESE,               //11
-    R_PARENTHESE,               //12
-    L_BRACKET,                  //13
-    R_BRACKET,                  //14
-    END_OF_FILE                 //15
+    INTEGER_LITERAL,            //3
+    ARITHMETIC_OPERATORS,       //4
+    PLUS,                       //5
+    MINUS,                      //6
+    MULT,                       //7
+    DIV,                        //8
+    SEPARATOR,                  //9     
+    L_PARENTHESE,               //10
+    R_PARENTHESE,               //11
+    L_BRACKET,                  //12
+    R_BRACKET,                  //13
+    END_OF_FILE                 //14
 };
 
 class Token {
