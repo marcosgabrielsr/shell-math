@@ -12,15 +12,16 @@ PARSER_H = $(DIR_SRC)/parser.h
 EXECUTABLE = $(DIR_BUILD)/shmath
 
 # Main
-all: scanner.o parser.o
-	g++ scanner.o $(MAIN) -o $(EXECUTABLE) -Wall
-	mv *.o $(DIR_BUILD)
+all: $(EXECUTABLE)
 
-scanner.o: $(TOKEN_H) $(SCANNER_H)
-	g++ -c $(SCANNER)
+$(EXECUTABLE): $(DIR_BUILD)/scanner.o $(DIR_BUILD)/parser.o
+	g++ $(DIR_BUILD)/scanner.o $(DIR_BUILD)/parser.o $(MAIN) -o $(EXECUTABLE) -Wall
 
-parser.o: $(SCANNER_H_) $(PARSER_H)
-	g++ -c $(PARSER)
+$(DIR_BUILD)/scanner.o: $(SCANNER) $(TOKEN_H) $(SCANNER_H)
+	g++ -c $(SCANNER) -o $@ -Wall
+
+$(DIR_BUILD)/parser.o: $(PARSER) $(SCANNER_H_) $(PARSER_H)
+	g++ -c $(PARSER) -o $@ -Wall
 
 run:
 	./$(EXECUTABLE)
