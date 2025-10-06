@@ -20,7 +20,9 @@ class Parser
         void error(string);
 
     public:
+        // Constructor method
         Parser(string);
-
+        
+        // Method that execute the Syntatical Analysis
         void run();
 };

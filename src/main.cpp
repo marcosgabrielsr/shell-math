@@ -1,6 +1,6 @@
 // Including libraries
 #include <iostream>
-#include "scanner.h"
+#include "parser.h"
 
 using namespace std;
 
@@ -15,6 +15,7 @@ int main() {
     string input;               // variable to store the math expression
     getline(cin, input);
 
+    // Scanner test
     Scanner* scan = new Scanner(input);
 
     Token* t;
@@ -25,6 +26,11 @@ int main() {
 
     cout << "\n";
     freeVect(vect);
+
+    // Parser test
+    Parser* parser = new Parser(input);
+    parser->run();
+
     return EXIT_SUCCESS;
 }
 
@@ -33,19 +39,18 @@ string* allocVect() {
     vect[0] = "UNDEF";
     vect[1] = "NUMBER";
     vect[2] = "DOUBLE_LITERAL";
-    vect[3] = "FLOAT_LITERAL";
-    vect[4] = "INTEGER_LITERAL";
-    vect[5] = "ARITHMETIC_OPERATORS";
-    vect[6] = "PLUS";
-    vect[7] = "MINUS";
-    vect[8] = "MULT";
-    vect[9] = "DIV";
-    vect[10]= "SEPARATORS";
-    vect[11] = "L_PARENTHESE";
-    vect[12] = "R_PARENTHESE";
-    vect[13] = "L_BRACKET";
-    vect[14] = "R_BRACKET";
-    vect[15] = "END_OF_FILE";
+    vect[3] = "INTEGER_LITERAL";
+    vect[4] = "ARITHMETIC_OPERATOR";
+    vect[5] = "PLUS";
+    vect[6] = "MINUS";
+    vect[7] = "MULT";
+    vect[8] = "DIV";
+    vect[9]= "SEPARATOR";
+    vect[10] = "L_PARENTHESE";
+    vect[11] = "R_PARENTHESE";
+    vect[12] = "L_BRACKET";
+    vect[13] = "R_BRACKET";
+    vect[14] = "END_OF_FILE";
 
     return vect;
 }
