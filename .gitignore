@@ -1,5 +1,6 @@
 # Ignorar diretório de build
 /build/
+/.vscode/
 
 # Arquivos temporários de compilação
 *.o
