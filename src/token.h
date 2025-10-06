@@ -1,3 +1,6 @@
+#ifndef TOKEN_H
+#define TOKEN_H
+
 // Including libraries
 #include <iostream>
 #include <ctype.h>
@@ -41,3 +44,5 @@ class Token {
             this->attribute = attr;
         }
 };
+
+#endif

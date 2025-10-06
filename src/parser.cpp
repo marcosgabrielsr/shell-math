@@ -4,6 +4,7 @@
 Parser::Parser(string input)
 {
     scanner = new Scanner(input);
+    syncTree = new SyntaticTree();
     advance();
 }
 
@@ -24,50 +25,77 @@ void Parser::match(int t) {
 }
 
 void Parser::goal() {
-    expr();
+    Node* r = expr();
+    syncTree->startTree(r);
     cout << "Compilation done!" << '\n';
+    cout << "Syntatic Tree In Order: ";
+    syncTree->printHierarchical();
+    cout << "\n";
 }
 
-void Parser::expr() {
-    term();
-    _expr();
+Node* Parser::expr() {
+    Node* n = new Node(E);
+    n->first = term();
+    n->second = _expr();
+    return n;
 }
 
-void Parser::_expr() {
+Node* Parser::_expr() {
+    Node* n;
+
     if(lToken->attribute == PLUS || lToken->attribute == MINUS) {
+        n = new Node(lToken);
         advance();
-        term();
-        _expr();
+        n->first = term();
+        n->second = _expr();
+    } else {
+        n = new Node(_E);
     }
+
+    return n;
 }
 
-void Parser::term() {
-    factor();
-    _term();
+Node* Parser::term() {
+    Node* n = new Node(T);
+    n->first = factor();
+    n->second = _term();
+    return n;
 }
 
-void Parser::_term() {
+Node* Parser::_term() {
+    Node* n;
+
     if(lToken->attribute == MULT || lToken->attribute == DIV) {
-        factor();
-        _term();
+        n = new Node(lToken);
+        advance();
+        n->first = factor();
+        n->second = _term();
+    } else {
+        n = new Node(_T);
     }
+
+    return n;
 }
 
-void Parser::factor() {
+Node* Parser::factor() {
     if(lToken->name == NUMBER) {
+        return new Node(F,lToken);
 
     } else if(lToken->name == SEPARATOR) {
         if(lToken->attribute == L_PARENTHESE) {
             advance();
-            expr();
+            return expr();
             match(R_PARENTHESE);
         } else if(lToken->attribute == L_BRACKET) {
             advance();
-            expr();
+            return expr();
             match(R_BRACKET);
+        } else {
+            return new Node(UNDEF_VALUE);
         }
     } else {
-        error("Sintatical error!");
+        error("Syntatical error!");
+        return new Node(UNDEF_VALUE);
     }
 }
 
