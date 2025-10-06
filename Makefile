@@ -20,7 +20,7 @@ $(EXECUTABLE): $(DIR_BUILD)/scanner.o $(DIR_BUILD)/parser.o
 $(DIR_BUILD)/scanner.o: $(SCANNER) $(TOKEN_H) $(SCANNER_H)
 	g++ -c $(SCANNER) -o $@ -Wall
 
-$(DIR_BUILD)/parser.o: $(PARSER) $(SCANNER_H_) $(PARSER_H)
+$(DIR_BUILD)/parser.o: $(PARSER) $(SCANNER_H) $(PARSER_H)
 	g++ -c $(PARSER) -o $@ -Wall
 
 run:
