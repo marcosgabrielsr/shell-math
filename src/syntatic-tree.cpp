@@ -28,9 +28,12 @@ void Node::printNode() {
     string value_name_list[] = {"UNDEF_VALUE", "E", "_E", "T", "_T", "F"};
 
     if(value != UNDEF_VALUE) {
-        cout << value_name_list[value] << " ";
-    } else {
-        cout << "Token(" << tok->name << ") ";
+        cout << value_name_list[value];
+        if(tok != nullptr) {
+            cout << ".Token(" << tok->name << ")";
+        }
+        
+        cout << " ";
     }
 }
 
@@ -43,11 +46,13 @@ void SyntaticTree::startTree(Node* n) {
 }
 
 void SyntaticTree::printInOrder() {
+    cout << "Printing in order:";
     if(root != nullptr) {
         printInOrder(root->first);
         root->printNode();
         printInOrder(root->second);
     }
+    cout << '\n';
 }
 
 void SyntaticTree::printInOrder(Node* n) {
@@ -88,10 +93,10 @@ void SyntaticTree::printHierarchical(Node* n, int level) {
 // Função pública para começar pela raiz
 void SyntaticTree::printHierarchical() {
     if (root == nullptr) {
-        cout << "Árvore vazia." << endl;
+        cout << "Void Tree." << endl;
         return;
     }
 
-    cout << "Árvore Sintática (Hierárquica):" << endl;
+    cout << "Syntatic Tree (Hierarchcal):" << endl;
     printHierarchical(root, 0);
 }
