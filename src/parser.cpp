@@ -14,6 +14,7 @@ void Parser::run() {
 
 void Parser::advance() {
     lToken = scanner->nextToken();
+    Token::printToken(lToken);
 }
 
 void Parser::match(int t) {
@@ -24,11 +25,15 @@ void Parser::match(int t) {
     }
 }
 
+SyntaticTree* Parser::getSyntaticTree() {
+    return syncTree;
+}
+
 void Parser::goal() {
     Node* r = expr();
     syncTree->startTree(r);
     cout << "Compilation done!" << '\n';
-    cout << "Syntatic Tree In Order: ";
+    syncTree->printInOrder();
     syncTree->printHierarchical();
     cout << "\n";
 }
@@ -44,13 +49,15 @@ Node* Parser::_expr() {
     Node* n;
 
     if(lToken->attribute == PLUS || lToken->attribute == MINUS) {
-        n = new Node(lToken);
+        n = new Node(_E, lToken);
         advance();
+        cout << "a\n";
         n->first = term();
         n->second = _expr();
     } else {
         n = new Node(_E);
     }
+    cout << "_E\n";
 
     return n;
 }
@@ -66,7 +73,7 @@ Node* Parser::_term() {
     Node* n;
 
     if(lToken->attribute == MULT || lToken->attribute == DIV) {
-        n = new Node(lToken);
+        n = new Node(_T, lToken);
         advance();
         n->first = factor();
         n->second = _term();
@@ -78,20 +85,27 @@ Node* Parser::_term() {
 }
 
 Node* Parser::factor() {
+    Node* n;
+
     if(lToken->name == NUMBER) {
-        return new Node(F,lToken);
+        n = new Node(F,lToken);
+        advance();
+        return n;
 
     } else if(lToken->name == SEPARATOR) {
         if(lToken->attribute == L_PARENTHESE) {
             advance();
-            return expr();
+            n = expr();
             match(R_PARENTHESE);
+            return n;
         } else if(lToken->attribute == L_BRACKET) {
             advance();
-            return expr();
+            n = expr();
             match(R_BRACKET);
+            return n;
         } else {
-            return new Node(UNDEF_VALUE);
+            n = new Node(UNDEF_VALUE);
+            return n;
         }
     } else {
         error("Syntatical error!");

@@ -25,6 +25,9 @@ class Parser
         // Constructor method
         Parser(string);
         
+        // Method that return the syntatic tree
+        SyntaticTree* getSyntaticTree();
+
         // Method that execute the Syntatical Analysis
         void run();
 };
