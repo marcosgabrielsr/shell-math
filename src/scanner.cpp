@@ -4,7 +4,7 @@
 // Builder
 Scanner::Scanner(string input) {
     this->input = input;
-    cout << "The input text is: " << input << "\n" << "Tamanho: " << input.length() << "\n";
+    // cout << "The input text is: " << input << "\n" << "Tamanho: " << input.length() << "\n";
     
     pos = 0;
 }
