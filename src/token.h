@@ -62,12 +62,15 @@ class Token {
                 "R_BRACKET",
                 "END_OF_FILE"
             };
+            cout << vect[t->name];
 
             if(t->name == NUMBER) {
                 cout << "(" << t->lexeme << ")";
             } else {
                 cout << "(" << vect[t->attribute] << ")";
             }
+
+            cout << '\n';
         }
 };
 
