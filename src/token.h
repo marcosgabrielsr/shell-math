@@ -43,6 +43,32 @@ class Token {
             this->name = name;
             this->attribute = attr;
         }
+
+        static void printToken(Token* t) {
+            string vect[16] = {
+                "UNDEF",
+                "NUMBER",
+                "DOUBLE_LITERAL",
+                "INTEGER_LITERAL",
+                "ARITHMETIC_OPERATOR",
+                "PLUS",
+                "MINUS",
+                "MULT",
+                "DIV",
+                "SEPARATOR",
+                "L_PARENTHESE",
+                "R_PARENTHESE",
+                "L_BRACKET",
+                "R_BRACKET",
+                "END_OF_FILE"
+            };
+
+            if(t->name == NUMBER) {
+                cout << "(" << t->lexeme << ")";
+            } else {
+                cout << "(" << vect[t->attribute] << ")";
+            }
+        }
 };
 
 #endif

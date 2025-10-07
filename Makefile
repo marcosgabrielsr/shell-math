@@ -7,6 +7,7 @@ MAIN = $(DIR_SRC)/main.cpp
 SCANNER = $(DIR_SRC)/scanner.cpp
 PARSER = $(DIR_SRC)/parser.cpp
 SYNTATIC_TREE = $(DIR_SRC)/syntatic-tree.cpp
+TOKEN = $(DIR_SRC)/token.cpp
 TOKEN_H = $(DIR_SRC)/token.h
 SCANNER_H = $(DIR_SRC)/scanner.h
 PARSER_H = $(DIR_SRC)/parser.h
