@@ -1,32 +1,27 @@
 // Including libraries
 #include "scanner.h"
-#include "syntatic-tree.h"
 
 class Parser
 {
     private:
         Scanner* scanner;
         Token* lToken;
-        SyntaticTree* syncTree;
 
         void advance();
         void match(int);
 
         void goal();
-        Node* expr();
-        Node* _expr();
-        Node* term();
-        Node* _term();
-        Node* factor();
+        void expr();
+        void _expr();
+        void term();
+        void _term();
+        void factor();
 
         void error(string);
 
     public:
         // Constructor method
         Parser(string);
-        
-        // Method that return the syntatic tree
-        SyntaticTree* getSyntaticTree();
 
         // Method that execute the Syntatical Analysis
         void run();
